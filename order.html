@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coffee Paradise</title>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <a class="nav-logo">
+        <h2 class="logo-text">Coffee Paradise</h2>
+      </a>
+      <ul class="nav-menu">
+                <li class="nav-item"><a href="home.html" class="nav-link">Home</a></li>
+
+        <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
+        <li class="nav-item"><a href="order.html" class="nav-link">Menu</a></li>
+        <li class="nav-item"><a href="book.html" class="nav-link">Book Table</a></li>
+        <li class="nav-item"><a href="contact.html" class="nav-link">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+<!-- 
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"> -->
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #5c2c31;
+      color: white;
+    }
+/* Header and Navbar */
+header {
+    background-color: #3b2025;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;  /* logo left, menu right */
+    align-items: center;             /* vertical center */
+    padding: 20PX 50px;                 /* space from edges */
+    height: 70px;                    /* fixed bar height */
+    max-width: 1400px;               /* keeps layout neat */
+    margin: 0 auto;                  /* centers content */
+    box-sizing: border-box;
+}
+
+.logo-text {
+  margin-bottom: 11px;
+    color: #fff;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 20px;                       /* space between links */
+
+}
+
+.nav-item a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    white-space: nowrap;             /* stops breaking into new line */
+}
+
+.nav-item a:hover {
+    color: #f3961c;
+}
+
+/* Responsive Navbar */
+@media (max-width: 900px) {
+    .navbar {
+        flex-direction: column;
+        justify-content: center;
+        height: auto;
+        padding: 15px 0;
+        text-align: center;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        gap: 12px;
+        margin-top: 10px;
+    }
+}
+
+/* Responsive Navbar */
+@media (max-width: 900px) {
+    .navbar {
+        flex-direction: column;
+        justify-content: center;
+        height: auto;
+        padding: 15px 0;
+        text-align: center;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        gap: 12px;
+        margin-top: 10px;
+    }
+}
+
+
+    section {
+      padding: 60px 10%;
+    }
+
+    h2::after {
+      content: "";
+      display: block;
+      width: 70px;
+      height: 4px;
+      /* background: #f3961c; */
+      margin: 8px auto 0;
+      border-radius: 2px;
+    }
+    section {
+      padding: 60px 10%;
+    }
+
+    h2 {
+      font-size: 32px;
+      color: white;
+      margin-bottom: 15px;
+      text-align: center;
+      position: relative;
+      display: inline-block;
+    }
+
+    h2::after {
+      content: "";
+      display: block;
+      width: 60px;
+      height: 3px;
+      /* background: #f3961c; */
+      margin: 8px auto 0;
+      border-radius: 2px;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.6;
+      text-align: center;
+      margin-bottom: 30px;
+      color: white;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: #5c2c31;
+      color: white;
+      padding: 100px 10%;
+      text-align: center;
+      border-radius: 12px;
+      position: relative;
+    }
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 15px;
+    }
+    .hero p {
+      font-size: 20px;
+      color: white;
+    }
+
+    /* Grid Layout for items */
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 25px;
+    }
+
+    .menu-item {
+      background: #3b141c;
+      border-radius: 12px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    }
+
+    /* .menu-item:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+      background: #fef2e6;
+    } */
+    .menu-item .icedcoffee{
+        height: 100%;
+    }
+    .menu-item img {
+      width: 100%;
+      max-height: 160px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      transition: transform 0.3s ease;
+    }
+/* 
+    .menu-item:hover img {
+      transform: scale(1.05);
+    } */
+
+    .menu-item h3 {
+      margin: 10px 0 5px;
+      color: #3b141c;
+      font-size: 20px;
+    }
+
+    .menu-item p {
+      font-size: 14px;
+      color: white;
+      margin-bottom: 8px;
+    }
+
+    .price {
+      font-weight: 600;
+      color: #f3961c;
+    }
+
+    /* Info Cards */
+    .info-cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+      margin-top: 40px;
+    }
+
+    .info-card {
+      background: #e7d9ff;
+      padding: 25px;
+      border-radius: 12px;
+      text-align: center;
+      width: 220px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+
+    .info-card:hover {
+      transform: translateY(-5px);
+      background: #d6c4ff;
+    }
+
+    .info-card h3 {
+      font-size: 20px;
+      color: #3b141c;
+      margin-bottom: 8px;
+    }
+
+    .info-card p {
+      font-size: 14px;
+      color: #3b141c;
+    }
+
+    /* Specials Section */
+    .specials {
+      background: #5c2c31;
+      padding: 50px 10%;
+      border-radius: 12px;
+    }
+
+    .special-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: #3b141c;
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+
+    .special-card img {
+      width: 100%;
+      max-height: 400px;
+      border-radius: 12px;
+      margin-bottom: 15px;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+/* 
+    .special-card:hover {
+      transform: translateY(-5px);
+      background: #fef2e6;
+    } */
+
+    /* .special-card:hover img {
+      transform: scale(1.05);
+    } */
+
+    .notice {
+      text-align: center;
+      margin-top: 50px;
+      font-style: italic;
+      color: #3b141c;
+      font-size: 16px;
+    }
+
+    @media (max-width: 900px) {
+      .info-cards {
+        flex-direction: column;
+        align-items: center;
+      }
+      .menu-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+        .back-btn-container {
+  text-align: center;
+  margin: 40px 0;
+}
+    .back-btn{
+      display: inline-block;
+      padding: 12px 24px;
+      cursor: pointer;
+      background: #f3961c;
+      color: white;
+      border-radius: 12px;
+      justify-content: center;
+      font-size: 1rem;
+      font-weight: 500;
+      transition: background 0.3 ease;
+    }
+    .back-btn:hover{
+      background: #f3961c;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Fuel Your Vibe ☕✨</h1>
+    <p>Brews & Bites for Every Mood — Serving happiness, one cup at a time 🌿🍪</p>
+  </section>
+
+  <!-- Beverages Section -->
+  <section>
+    <h2>Beverages</h2>
+    <p>Sippin’ never looked this good ☕</p>
+    <div class="menu-grid">
+      <div class="menu-item">
+        <img src="cappuccino.jpg" alt="Cappuccino">
+        <h3>Cappuccino</h3>
+        <p>Rich espresso with creamy foam.</p>
+        <p class="price">₹150</p>
+      </div>
+      <div class="menu-item">
+        <img src="latte.jpg" alt="Latte">
+        <h3>Latte</h3>
+        <p>Smooth espresso with steamed milk.</p>
+        <p class="price">₹160</p>
+      </div>
+      <div class="menu-item">
+        <img src="icedtea.jpg" alt="Iced Tea">
+        <h3>Iced Tea</h3>
+        <p>Refreshing chilled tea with lemon.</p>
+        <p class="price">₹120</p>
+      </div>
+      <div class="menu-item">
+        <img src="mocha.jpg" alt="Mocha">
+        <h3>Mocha</h3>
+        <p>Chocolatey twist to your espresso.</p>
+        <p class="price">₹170</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Snacks Section -->
+  <section>
+    <h2>Snacks & Bakery</h2>
+    <p>Snack goals? We got you 🍩✨</p>
+    <div class="menu-grid">
+      <div class="menu-item">
+        <img src="crossiant.jpg" alt="Croissant">
+        <h3>Croissant</h3>
+        <p>Flaky, buttery pastry baked fresh daily.</p>
+        <p class="price">₹80</p>
+      </div>
+      <div class="menu-item">
+        <img src="muffin.jpg" alt="Muffin">
+        <h3>Muffin</h3>
+        <p>Soft and sweet treat with chocolate chips.</p>
+        <p class="price">₹90</p>
+      </div>
+      <div class="menu-item">
+        <img src="sandwich.jpg" alt="Sandwich">
+        <h3>Sandwich</h3>
+        <p>Fresh veggies and cheese in toasted bread.</p>
+        <p class="price">₹120</p>
+      </div>
+      <div class="menu-item">
+        <img src="cookie.jpg" alt="Cookie">
+        <h3>Cookies</h3>
+        <p>Crunchy bites of sweetness to pair with coffee.</p>
+        <p class="price">₹60</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Specials Section -->
+  <section class="specials">
+    <h2>Trending Combos ⚡</h2>
+    <p>Get your vibe on with these perfect pairings 😎✨</p>
+    <div class="menu-grid">
+      <div class="special-card">
+        <img src="coffee-croissant.jpg" alt="Coffee + Croissant">
+        <h3>Coffee + Croissant</h3>
+        <p>Classic combo to kickstart your day.</p>
+        <p class="price">₹200</p>
+      </div>
+      <div class="special-card">
+        <img src="latte-cookie.jpg" alt="Latte + cookie">
+        <h3>Latte + Cookie</h3>
+        <p>Sweet & creamy vibes in one bite ☕🍫</p>
+        <p class="price">₹220</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Info Cards -->
+  <section>
+    <div class="info-cards">
+      <div class="info-card">
+        <h3>Freshly Brewed Daily 🌿</h3>
+        <p>We craft each cup with love & attention to detail.</p>
+      </div>
+      <div class="info-card">
+        <h3>100% Chill Vibes Only 😎</h3>
+        <p>Enjoy the cafe atmosphere, snacks & coffee with your gang.</p>
+      </div>
+      <div class="info-card">
+        <h3>Made with Love ❤️</h3>
+        <p>Every beverage & snack is prepared fresh for you.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Notice -->
+  <section class="notice">
+    <p>We don’t do online delivery yet 🚫📦 — but hey, coffee tastes better when you vibe with us IRL 😌☕✨</p>
+  </section>
+  <div class="back-btn-container">
+  <a href="home.html" class="back-btn">⬅ Back</a>
+</div>
+</body>
+</html>

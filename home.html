@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coffee Paradise</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <a class="nav-logo">
+        <h2 class="logo-text">Coffee Paradise</h2>
+      </a>
+      <ul class="nav-menu">
+        <li class="nav-item"><a href="home.html" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
+        <li class="nav-item"><a href="order.html" class="nav-link">Menu</a></li>
+        <li class="nav-item"><a href="book.html" class="nav-link">Book Table</a></li>
+        <li class="nav-item"><a href="contact.html" class="nav-link">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="section-content">
+        <div class="hero-details">
+          <h2 class="title">Best Coffee</h2>
+          <h3 class="subtitle">Make your day great with our special coffee</h3>
+          <p class="description">Welcome to our coffee paradise, where every bean tells a story and every cup sparks joy.</p>
+          <!-- <a href="order.html" class="btn-hero">Order Now</a> -->
+        </div>
+        <div class="hero-image-wrapper">
+          <img class="hero-img" src="coffee-hero-section.png" alt="Coffee hero image">
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Coffees Section -->
+    <section class="featured-coffee">
+      <h2 class="section-title">Our Favorites</h2>
+      <div class="coffee-grid">
+        <div class="coffee-card">
+          <img src="coffee1 (2).jpg" alt="Espresso">
+          <h3>Espresso</h3>
+          <p>Rich and bold flavor to kickstart your day.</p>
+        </div>
+        <div class="coffee-card">
+          <img src="coffee2.jpg" alt="Cuppacino">
+          <h3>Cappuccino</h3>
+          <p>Classic Italian coffee with creamy foam.</p>
+        </div>
+        <div class="coffee-card">
+          <img src="coffee3.jpg" alt="Latte">
+          <h3>Latte</h3>
+          <p>Smooth and milky coffee to relax your senses.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+      <h2 class="section-title">What Customers Say</h2>
+      <div class="testimonial-grid">
+        <div class="testimonial-card">
+          <p>"The best coffee I've ever tasted! Cozy ambiance too."</p>
+          <h4>- Mansi Pandey</h4>
+        </div>
+        <div class="testimonial-card">
+          <p>"Perfect place to relax with friends. Highly recommend!"</p>
+          <h4>- Sagar Rathod</h4>
+        </div>
+        <div class="testimonial-card">
+          <p>"Amazing variety of coffees. Every cup is crafted perfectly."</p>
+          <h4>- Mitali Totala</h4>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Coffee Paradise. All Rights Reserved.</p>
+    <div class="footer-links">
+      <a href="about.html">About</a> | 
+      <a href="contact.html">Contact</a> | 
+      <a href="order.html">Menu</a>
+      
+ <div class="social-icons">
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"></a>
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"></a>
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp"></a>
+    </div>
+  
+    </div>
+  </footer>
+
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body>
+</html>

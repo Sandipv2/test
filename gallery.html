@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coffee Paradise</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <a class="nav-logo">
+        <h2 class="logo-text">Coffee Paradise</h2>
+      </a>
+      <ul class="nav-menu">
+        <li class="nav-item"><a href="home.html" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
+        <li class="nav-item"><a href="order.html" class="nav-link">Menu</a></li>
+        <li class="nav-item"><a href="book.html" class="nav-link">Book Table</a></li>
+        <li class="nav-item"><a href="contact.html" class="nav-link">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: #5c2c31;
+      color: white;
+    }
+
+    /* Header and Navbar */
+header {
+    background-color: #3b2025;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;  /* logo left, menu right */
+    align-items: center;             /* vertical center */
+    padding: 20PX 50px;                 /* space from edges */
+    height: 70px;                    /* fixed bar height */
+    max-width: 1400px;               /* keeps layout neat */
+    margin: 0 auto;                  /* centers content */
+    box-sizing: border-box;
+}
+
+.logo-text {
+  margin-bottom: 11px;
+    color: #fff;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 20px;                       /* space between links */
+
+}
+
+.nav-item a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    white-space: nowrap;             /* stops breaking into new line */
+}
+
+.nav-item a:hover {
+    color: #f3961c;
+}
+
+/* Responsive Navbar */
+@media (max-width: 900px) {
+    .navbar {
+        flex-direction: column;
+        justify-content: center;
+        height: auto;
+        padding: 15px 0;
+        text-align: center;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        gap: 12px;
+        margin-top: 10px;
+    }
+}
+
+
+    /* Header */
+    .header {
+      text-align: center;
+      padding: 70px 25px 50px;
+      background: #5c2c31;
+    }
+    .header h1 {
+      font-size: 3rem;
+      color: white;
+      margin-bottom: 18px;
+      letter-spacing: 2px;
+      margin-top: 20px;
+    }
+    .header p {
+      max-width: 750px;
+      margin: auto;
+      font-size: 1.15rem;
+      color: white;
+      line-height: 1.8;
+      font-style: italic;
+    }
+
+    /* Gallery Grid */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      padding: 50px;
+    }
+    .gallery-item {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      width: 100%;
+      height: 380px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+      transition: 0.4s;
+    }
+    .gallery-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 20px;
+      transition: 0.5s;
+    }
+    .gallery-item:hover {
+      transform: translateY(-8px) rotate(-1deg);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.2);
+    }
+    .gallery-item:hover .gallery-img {
+      transform: scale(1.08);
+    }
+
+    /* Overlay text */
+    .overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 20px;
+      background: linear-gradient(180deg, transparent, rgba(0,0,0,0.65));
+      color: white;
+      opacity: 0;
+      transition: 0.4s;
+      border-radius: 0 0 20px 20px;
+      font-family: "Poppins", sans-serif; /* Changed to Poppins */
+    }
+    .gallery-item:hover .overlay {
+      opacity: 1;
+    }
+    .overlay h3 {
+      margin: 0;
+      font-size: 1.3rem;
+      font-weight: 600;
+    }
+    .overlay p {
+      margin-top: 6px;
+      font-size: 0.95rem;
+      font-style: italic;
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      padding: 50px 20px;
+      font-size: 1.05rem;
+      background: #5c2c31;
+      margin-top: 40px;
+      border-top: 3px solid #f3961c;
+      color: white;
+      letter-spacing: 0.5px;
+    }
+
+    /* Back Button */
+    .back-btn-container {
+      text-align: center;
+      margin: 40px 0;
+    }
+    .back-btn {
+      display: inline-block;
+      padding: 12px 24px;
+      background: #f3961c;
+      color: white;
+      text-decoration: none;
+      border-radius: 10px;
+      font-size: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .back-btn:hover {
+      background: #d97f12;
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+      .header h1 {
+        font-size: 2.2rem;
+      }
+      .header p {
+        font-size: 1rem;
+      }
+      .gallery {
+        padding: 20px;
+      }
+      .gallery-item {
+        height: 300px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .header h1 {
+        font-size: 1.8rem;
+      }
+      .gallery-item {
+        height: 250px;
+      }
+      .overlay h3 {
+        font-size: 1.1rem;
+      }
+      .overlay p {
+        font-size: 0.85rem;
+      }
+    }
+  </style>
+
+  <div class="header">
+    <h1>Our Gallery ✨</h1>
+    <p>
+      A cozy corner of memories, coffee, and joy 🌸☕  
+      From freshly brewed moments to happy celebrations, here’s a glimpse into our vibe.
+    </p>
+  </div>
+
+  <!-- Gallery Section -->
+  <div class="gallery">
+    <div class="gallery-item">
+      <img class="gallery-img" src="coldcoff.jpg" alt="Coffee">
+      <div class="overlay">
+        <h3>Fresh Brew</h3>
+        <p>Your daily hug in a mug ☕</p>
+      </div>
+    </div>
+
+    <div class="gallery-item">
+      <img class="gallery-img" src="matcha.jpg" alt="Matcha">
+      <div class="overlay">
+        <h3>Matcha</h3>
+        <p>Green vibe – for the trendy aesthetic.</p>
+      </div>
+    </div>
+
+    <div class="gallery-item">
+      <img class="gallery-img" src="snack.jpg" alt="Snacks">
+      <div class="overlay">
+        <h3>Crunchy Snacks</h3>
+        <p>Little bites, big smiles 😋</p>
+      </div>
+    </div>
+
+    <div class="gallery-item">
+      <img class="gallery-img" src="cake.jpg" alt="Cake">
+      <div class="overlay">
+        <h3>Celebration Cake</h3>
+        <p>Sweet treats, sweet vibes 🎂</p>
+      </div>
+    </div>
+
+    <div class="gallery-item">
+      <img class="gallery-img" src="friends.jpg" alt="Friends">
+      <div class="overlay">
+        <h3>Good Times</h3>
+        <p>Friends + food = forever ❤️</p>
+      </div>
+    </div>
+
+    <div class="gallery-item">
+      <img class="gallery-img" src="interior1.jpg" alt="Cafe Interior">
+      <div class="overlay">
+        <h3>Cozy Interior</h3>
+        <p>Stay a little longer 🌸</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    ✨ Thank you for being part of our story — can’t wait to make more memories with you! ✨
+    <div class="back-btn-container">
+      <a href="home.html" class="back-btn">⬅ Back</a>
+    </div>
+  </div>
+
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body>
+</html>
