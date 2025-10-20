@@ -1,0 +1,347 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #fcebeb;
+  font-family: sans-serif;
+  color: #fff;
+}
+
+/* Header and Navbar */
+header {
+  background-color: #3b2025;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+}
+
+.logo-text {
+  color: #fff;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+.nav-item a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-item a:hover {
+  color: #f3961c;
+}
+
+/* Main Content and Hero Section */
+main {
+  background-color: #5c2c31;
+  padding: 50px;
+}
+
+.hero-section {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+.hero-details {
+  flex: 1;
+}
+
+.title {
+  font-family: "Brush Script MT", cursive;
+  font-size: 40px;
+  color: #f7d291;
+  font-weight: normal;
+}
+
+.subtitle {
+  font-size: 48px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.description {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* Buttons */
+.buttons {
+  display: flex;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.button {
+  text-decoration: none;
+  padding: 12px 25px;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.order-now {
+  background-color: #ff9900;
+  color: #fff;
+}
+
+.order-now:hover {
+  background-color: #e68a00;
+}
+
+.contact-us {
+  border: 2px solid #fff;
+  color: #fff;
+}
+
+.contact-us:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Image */
+.hero-image-wrapper {
+  flex: 1;
+  width: 100%;
+  text-align: center;
+}
+
+.hero-image-wrapper img {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+/* Featured Coffees */
+.featured-coffee {
+  padding: 60px 50px;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 36px;
+  margin-bottom: 40px;
+  color: white;
+}
+
+.coffee-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.coffee-card {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  width: 220px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.coffee-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.coffee-card img {
+  width: 100%;
+  height: auto;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.coffee-card h3 {
+  margin-bottom: 10px;
+  color: #6f4e37;
+}
+
+/* Testimonials */
+.testimonials {
+  background-color: #3b2025;
+  padding: 60px 50px;
+  text-align: center;
+}
+
+.testimonial-grid {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.testimonial-card {
+  background-color: #5c2c31;
+  padding: 25px;
+  border-radius: 15px;
+  width: 250px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+}
+
+.testimonial-card p {
+  font-style: italic;
+  margin-bottom: 15px;
+}
+
+/* Universal Image Rule */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* Hidden elements */
+.sidebar,
+.menu-btn,
+#menu-toggle {
+  display: none;
+}
+
+/* Responsive Styles */
+@media (max-width: 900px) {
+  .navbar {
+    flex-direction: column;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .nav-menu {
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 15px;
+  }
+
+  .hero-section {
+    padding: 40px 20px;
+  }
+
+  .section-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-details {
+    margin-bottom: 30px;
+  }
+
+  .title {
+    font-size: 32px;
+  }
+
+  .subtitle {
+    font-size: 36px;
+  }
+
+  .description {
+    font-size: 16px;
+    padding: 0 10px;
+  }
+
+  .buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .button {
+    width: 80%;
+    text-align: center;
+  }
+
+  .coffee-grid,
+  .testimonial-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .coffee-card,
+  .testimonial-card {
+    width: 90%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .featured-coffee,
+  .testimonials {
+    padding: 40px 20px;
+  }
+
+  footer {
+    padding: 20px;
+  }
+
+  /* .footer-links {
+    flex-direction: column;
+    gap: 8px;
+    display: flex;
+  } */
+}
+
+
+/* Footer */
+footer {
+  background-color: #3b2025;
+  color: #fff;
+  padding: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.footer-links a {
+  color: #fff;
+  margin: 0 10px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.social-icons {
+  display: flex;
+}
+
+.social-icons img {
+  width: 30px;
+  margin: 0 10px;
+  transition: transform 0.3s;
+}
+
+.social-icons img:hover {
+  transform: scale(1.2);
+}

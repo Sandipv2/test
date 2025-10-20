@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coffee Paradise</title>
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+        margin: 0;
+        padding: 0;
+        background: #5c2c31;
+        color: white;
+      }
+      /* Header and Navbar */
+      header {
+        background-color: #3b2025;
+        margin: 0;
+        padding: 0;
+      }
+
+      .navbar {
+        display: flex;
+        justify-content: space-between; /* logo left, menu right */
+        align-items: center; /* vertical center */
+        padding: 20px 50px; /* space from edges */
+        height: 70px; /* fixed bar height */
+        max-width: 1400px; /* keeps layout neat */
+        margin: 0 auto; /* centers content */
+        box-sizing: border-box;
+      }
+
+      .logo-text {
+        margin-bottom: 11px;
+        color: #fff;
+        font-size: 26px;
+        font-weight: bold;
+      }
+
+      .nav-menu {
+        display: flex;
+        list-style: none;
+        gap: 20px; /* space between links */
+      }
+
+      .nav-item a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 18px;
+        font-weight: 500;
+        transition: color 0.3s ease;
+        white-space: nowrap; /* stops breaking into new line */
+      }
+
+      .nav-item a:hover {
+        color: #f3961c;
+      }
+
+      /* Responsive Navbar */
+      @media (max-width: 900px) {
+        .navbar {
+          flex-direction: column;
+          justify-content: center;
+          height: auto;
+          padding: 15px 0;
+          text-align: center;
+        }
+
+        .nav-menu {
+          flex-direction: column;
+          gap: 12px;
+          margin-top: 10px;
+        }
+      }
+
+      section {
+        padding: 60px 10%;
+      }
+
+      h2 {
+        font-size: 34px;
+        color: white;
+        margin-bottom: 20px;
+        display: inline-block;
+        position: relative;
+      }
+
+      h2::after {
+        content: "";
+        display: block;
+        width: 70px;
+        height: 4px;
+        /* background: #f3961c; */
+        margin: 8px auto 0;
+        border-radius: 2px;
+      }
+
+      p {
+        font-size: 21px;
+        line-height: 1.8;
+        text-align: justify;
+      }
+
+      /* --- About Us Section --- */
+      .history-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 50px;
+        flex-wrap: wrap;
+      }
+
+      .history-text {
+        flex: 1;
+        order: 1;
+        animation: fadeInLeft 1.2s ease-in-out;
+      }
+
+      .history-image {
+        flex: 1;
+        order: 2;
+        text-align: right;
+        animation: fadeInRight 1.2s ease-in-out;
+      }
+
+      .history-image img {
+        width: 100%;
+        max-width: 400px;
+        border-radius: 15px;
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+        object-fit: cover;
+        transition: transform 0.4s ease;
+      }
+      .history-image img:hover {
+        transform: scale(1.05);
+      }
+
+      /* --- Mission Section --- */
+      .mission {
+        /*background: linear-gradient(135deg, #fff8f0);*/
+        background-color: #5c2c31;
+        text-align: center;
+        padding: 70px 10%;
+        border-radius: 12px;
+        box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+        animation: fadeInUp 1.2s ease-in-out;
+      }
+      .mission p {
+        margin-top: 20px;
+        font-size: 21px;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      /* --- Importance of Coffee --- */
+      .importance {
+        background: #5c2c31;
+        border-left: 8px solid #f3961c;
+        border-radius: 12px;
+        padding: 50px;
+        margin: 60px auto;
+        box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+        animation: fadeInUp 1.5s ease;
+      }
+      .importance ul {
+        margin-top: 20px;
+        list-style: none;
+        padding: 0;
+      }
+      .importance ul li {
+        font-size: 21px;
+        margin: 12px 0;
+        position: relative;
+        padding-left: 30px;
+      }
+      .importance ul li::before {
+        content: "☕";
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+
+      /* --- Why Choose Us --- */
+      .why-choose {
+        background: #5c2c31;
+      }
+      .features {
+        display: flex;
+        gap: 30px;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin-top: 30px;
+      }
+      .feature {
+        flex: 1;
+        min-width: 220px;
+        background: #3b141c;
+        padding: 25px;
+        border-radius: 14px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+        text-align: center;
+        transition: transform 0.3s ease;
+      }
+      .feature:hover {
+        transform: translateY(-10px);
+      }
+      .feature h3 {
+        margin-top: 10px;
+        color: #3b141c;
+      }
+
+      /* --- Cafe Gallery --- */
+      .gallery {
+        background: linear-gradient(135deg, #fff8f0, #5c2c31);
+        border-radius: 12px;
+        padding: 70px 10%;
+        text-align: center;
+        box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+      }
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 20px;
+        margin-top: 30px;
+      }
+      .gallery-grid img {
+        width: 100%;
+        border-radius: 12px;
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+        object-fit: cover;
+        transition: transform 0.3s ease;
+      }
+      .gallery-grid img:hover {
+        transform: scale(1.08);
+      }
+      /* Center the link */
+      .gall-btn {
+        display: flex;
+        justify-content: center;
+        text-decoration: none; /* remove underline */
+        margin-top: 20px; /* spacing from content above */
+      }
+
+      /* Style the button inside */
+      .gall-btn button {
+        background-color: #f3961c; /* main theme color */
+        color: #fff;
+        border: none;
+        padding: 10px 22px;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .gall-btn button:hover {
+        background-color: #252525;
+        color: #f3961c;
+        transform: scale(1.05);
+      }
+
+      /* --- Call to Action --- */
+      .cta {
+        background: #3b141c;
+        color: #fff;
+        text-align: center;
+        padding: 70px 10%;
+        border-radius: 12px;
+        margin-top: 60px;
+        animation: fadeInUp 1.5s ease-in-out;
+      }
+      .cta h2 {
+        color: #fff;
+      }
+      .cta h2::after {
+        background: #f3961c;
+      }
+      .cta p {
+        margin: 20px 0;
+      }
+
+      .cta button {
+        background: #f3961c;
+        color: #fff;
+        border: none;
+        padding: 14px 28px;
+        border-radius: 8px;
+        font-size: 18px;
+        cursor: pointer;
+        font-family: "Poppins", sans-serif;
+        transition: background 0.3s ease, transform 0.2s ease;
+      }
+      .cta button:hover {
+        background: #d97e12;
+        transform: scale(1.05);
+      }
+
+      /* --- Delivery Note --- */
+      .delivery-note {
+        margin-top: 30px;
+        font-size: 22px;
+        font-weight: 600;
+        color: #f3961c;
+      }
+
+      /* --- Animations --- */
+
+      /* --- Responsive --- */
+      @media (max-width: 900px) {
+        .history-content {
+          flex-direction: column;
+          text-align: center;
+        }
+        .history-image {
+          text-align: center;
+          order: 2;
+        }
+      }
+      /* Back Button Container */
+      .back-btn-container {
+        text-align: center;
+        margin: 40px 0;
+      }
+
+      /* Back Button */
+      .back-btn-container {
+        text-align: center;
+        margin: 20px 0;
+      }
+
+      .back-btn {
+        display: inline-block;
+        padding: 12px 24px;
+        background: #f3961c;
+        color: white;
+        text-decoration: none;
+        border-radius: 10px;
+        font-size: 1rem;
+        font-weight: 500;
+        transition: background 0.3s ease;
+      }
+
+      .back-btn:hover {
+        background: #d97f12;
+      }
+      /* Hidden elements */
+      .sidebar,
+      .menu-btn,
+      #menu-toggle {
+        display: none;
+      }
+
+      /*Footer*/
+      footer {
+        background-color: #3b2025;
+        color: #fff;
+        padding: 2rem 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      footer p:first-child {
+        margin: 0;
+        font-size: medium;
+      }
+
+      .footer-links a {
+        color: #fff;
+        margin: 0 10px;
+        text-decoration: none;
+        font-weight: 600;
+      }
+
+      .footer-links a:hover {
+        text-decoration: underline;
+      }
+
+      .social-icons {
+        display: flex;
+      }
+
+      .social-icons img {
+        width: 30px;
+        margin: 0 10px;
+        transition: transform 0.3s;
+      }
+
+      .social-icons img:hover {
+        transform: scale(1.2);
+      }
+
+      /* Responsive Styles */
+      @media (max-width: 900px) {
+        .navbar {
+          flex-direction: column;
+          padding: 20px;
+          text-align: center;
+        }
+
+        .nav-menu {
+          flex-direction: column;
+          gap: 12px;
+          margin-top: 15px;
+        }
+
+        .hero-section {
+          padding: 40px 20px;
+        }
+
+        .section-content {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .hero-details {
+          margin-bottom: 30px;
+        }
+
+        .title {
+          font-size: 32px;
+        }
+
+        .subtitle {
+          font-size: 36px;
+        }
+
+        .description {
+          font-size: 16px;
+          padding: 0 10px;
+        }
+
+        .buttons {
+          flex-direction: column;
+          align-items: center;
+          gap: 15px;
+        }
+
+        .button {
+          width: 80%;
+          text-align: center;
+        }
+
+        .coffee-grid,
+        .testimonial-grid {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .coffee-card,
+        .testimonial-card {
+          width: 90%;
+          max-width: 300px;
+          margin: 0 auto;
+        }
+
+        .featured-coffee,
+        .testimonials {
+          padding: 40px 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <header>
+      <nav class="navbar">
+        <a class="nav-logo">
+          <h2 class="logo-text">Coffee Paradise</h2>
+        </a>
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link">Home</a>
+          </li>
+
+          <li class="nav-item">
+            <a href="about.html" class="nav-link">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a href="order.html" class="nav-link">Menu</a>
+          </li>
+          <li class="nav-item">
+            <a href="book.html" class="nav-link">Book Table</a>
+          </li>
+          <li class="nav-item">
+            <a href="contact.html" class="nav-link">Contact Us</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <!-- 
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"> -->
+
+    <!-- About Us -->
+    <section class="history-section">
+      <div class="history-content">
+        <div class="history-text">
+          <h2>About Us</h2>
+          <p>
+            We began our journey in 1990 with a small coffee shop in a quiet
+            corner of the city. What started as a cozy spot for locals soon
+            turned into a destination for coffee lovers from all around.
+          </p>
+          <p>
+            Every cup we brew carries our tradition, love, and passion for
+            coffee. Over the years, we’ve grown, but our heart remains the same
+            — to bring people together over the joy of coffee.
+          </p>
+        </div>
+        <div class="history-image">
+          <img src="history.jpg" alt="About Our Coffee Shop" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Mission -->
+    <section class="mission">
+      <h2>Our Mission</h2>
+      <p>
+        To craft coffee that not only awakens your senses but also warms your
+        heart. We believe in sustainability, ethical sourcing, and creating a
+        welcoming space for everyone.
+      </p>
+    </section>
+
+    <!-- Importance of Coffee -->
+    <section class="importance">
+      <h2>Importance of Coffee</h2>
+      <p>
+        Coffee is more than just a drink – it’s an experience, a tradition, and
+        a daily ritual for millions worldwide. Here’s why coffee matters:
+      </p>
+      <ul>
+        <li>Boosts energy and keeps you active throughout the day.</li>
+        <li>Encourages social connections and meaningful conversations.</li>
+        <li>Packed with antioxidants that promote better health.</li>
+        <li>A creative spark – inspiring ideas over every cup.</li>
+        <li>
+          Represents culture, passion, and craftsmanship across generations.
+        </li>
+      </ul>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-choose">
+      <h2>Why Choose Us</h2>
+      <div class="features">
+        <div class="feature">
+          <h3>☕ Premium Beans</h3>
+          <p>
+            We source only the finest coffee beans from trusted farms worldwide.
+          </p>
+        </div>
+        <div class="feature">
+          <h3>🌿 Eco-Friendly</h3>
+          <p>
+            Committed to sustainable practices and reducing our carbon
+            footprint.
+          </p>
+        </div>
+        <div class="feature">
+          <h3>🤝 Community</h3>
+          <p>A place where friendships are brewed, not just coffee.</p>
+        </div>
+        <div class="feature">
+          <h3>⭐ Quality Service</h3>
+          <p>Our baristas craft every cup with love, precision, and care.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Café Gallery -->
+    <section class="gallery">
+      <h2>Our Café</h2>
+      <div class="gallery-grid">
+        <img src="interior.jpg" alt="Cafe Interior" />
+        <img src="coffeebeans.jpg" alt="Coffee Beans" />
+        <img src="coffeecup.jpg" alt="Coffee Cup" />
+        <img src="customer.jpg" alt="Cafe Ambience" />
+      </div>
+    </section>
+    <a class="gall-btn" href="gallery.html"> <button>View more</button> </a>
+
+    <!-- Call to Action -->
+    <section class="cta">
+      <h2>Visit Us Today</h2>
+      <p>
+        Come experience the aroma, taste, and warmth of our café. Join us for a
+        cup of happiness and make memories that last.
+      </p>
+
+      <!-- Delivery Note -->
+      <h3 class="delivery-note">
+        Kindly note: We currently do not provide online delivery. We’d love to
+        serve you in person at our café!
+      </h3>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2025 Coffee Paradise. All Rights Reserved.</p>
+      <div class="footer-links">
+        <a href="about.html">About</a> | <a href="contact.html">Contact</a> |
+        <a href="order.html">Menu</a>
+      </div>
+
+      <div class="social-icons">
+        <a href="#"
+          ><img
+            src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"
+            alt="Instagram"
+        /></a>
+        <a href="#"
+          ><img
+            src="https://cdn-icons-png.flaticon.com/512/733/733547.png"
+            alt="Facebook"
+        /></a>
+        <a href="#"
+          ><img
+            src="https://cdn-icons-png.flaticon.com/512/733/733585.png"
+            alt="WhatsApp"
+        /></a>
+      </div>
+    </footer>
+  </body>
+</html>
